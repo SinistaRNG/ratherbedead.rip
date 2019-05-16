@@ -15,5 +15,5 @@ Basic template grabbed from [here](https://startbootstrap.com/themes/grayscale/)
 ### Nice to haves:
 - [ ] Additional features on the website
 - [ ] Hosted Discord bot
-- [ ] Smalled scaled background images for smaller resolutions
+- [ ] Scaled background images for smaller resolutions
 - [ ] Creating own assets for media buttons
