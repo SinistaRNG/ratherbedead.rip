@@ -9,9 +9,11 @@ Basic template grabbed from [here](https://startbootstrap.com/themes/grayscale/)
 ### TODOs:
 - [x] Grab website from server and host it back on Git
 - [ ] Add TODO section on playlist.html
-- [ ] Fix background scaling on devices with displays less than 1080p
+- [x] Fix background scaling on devices with displays less than 1080p
 - [ ] Updating contact portion of the main page to include additional social media links
 
 ### Nice to haves:
 - [ ] Additional features on the website
 - [ ] Hosted Discord bot
+- [ ] Smalled scaled background images for smaller resolutions
+- [ ] Creating own assets for media buttons
