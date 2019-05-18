@@ -1,49 +1,42 @@
-/*!
- * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+(function($) {
+  "use strict"; // Start of use strict
 
-//Used to fire scroll function once after scrolling is done.
-var timerid; 
-$(document).ready(function(){
-    $("#menu a").click(function(e){
-        e.preventDefault();
-        $("#menu a").removeClass('active');
-        var id = $(this).attr("href").substring(1);
-        $("body").animate({
-            'scrollTop': $("section#" + id).offset().top
-        });        
-    });
-    //forcing window scroll to execute on page load
-	$("body").scrollTop(1); 
-    $(window).scroll(function(){
-        clearTimeout(timerid);
-        timerid = setTimeout(checkactivelink, 50);
-    });
-
-    function checkactivelink()
-    {
-        $("section").each(function(){
-            if($("body").scrollTop() >= $(this).offset().top)
-            {
-                $("#menu a").removeClass('active');
-                    $("#menu a[href=#" + $(this).attr("id") + "]").addClass('active');
-            }
-        });
+  // Smooth scrolling using jQuery easing
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: (target.offset().top - 70)
+        }, 1000, "easeInOutExpo");
+        return false;
+      }
     }
-});
+  });
 
-// jQuery to collapse the navbar on scroll
-$(window).scroll(function() {
-    if ($(".navbar").offset().top > 50) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
+  // Closes responsive menu when a scroll trigger link is clicked
+  $('.js-scroll-trigger').click(function() {
+    $('.navbar-collapse').collapse('hide');
+  });
+
+  // Activate scrollspy to add active class to navbar items on scroll
+  $('body').scrollspy({
+    target: '#mainNav',
+    offset: 100
+  });
+
+  // Collapse Navbar
+  var navbarCollapse = function() {
+    if ($("#mainNav").offset().top > 100) {
+      $("#mainNav").addClass("navbar-shrink");
     } else {
-        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+      $("#mainNav").removeClass("navbar-shrink");
     }
-});
+  };
+  // Collapse now if page is not at top
+  navbarCollapse();
+  // Collapse the navbar when page is scrolled
+  $(window).scroll(navbarCollapse);
 
-// Closes the Responsive Menu on Menu Item Click
-$('.navbar-collapse ul li a').click(function() {
-    $('.navbar-toggle:visible').click();
-});
+})(jQuery); // End of use strict
