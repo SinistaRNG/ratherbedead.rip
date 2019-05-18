@@ -7,13 +7,18 @@ As was commonplace back then, whatever I tell you is actually here and hosted co
 Basic template grabbed from [here](https://startbootstrap.com/themes/grayscale/) with very few modifications made by myself for my own personal use.
 
 ### TODOs:
+
+Infrastructure:
 - [x] Grab website from server and host it back on Git
+- [x] Upgrade bootstrap the site is using to not be on a version that was created in 2015
+- [ ] Hosted Discord bot
+
+Actual site:
 - [ ] Add TODO section on playlist.html
 - [x] Fix background scaling on devices with displays less than 1080p
-- [ ] Updating contact portion of the main page to include additional social media links
+- [x] Update contact portion of the main page to include additional social media links
 
-### Nice to haves:
+### Additionals:
 - [ ] Additional features on the website
-- [ ] Hosted Discord bot
-- [ ] Scaled background images for smaller resolutions
-- [ ] Creating own assets for media buttons
+- [x] Gachi PoE lootfilter and resources hosted on site
+- [x] Find and add additional contact buttons
